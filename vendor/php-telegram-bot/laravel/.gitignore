@@ -1,0 +1,33 @@
+# IDE & System Related Files #
+.buildpath
+.project
+.settings
+.DS_Store
+.idea
+.phpintel
+composer.phar
+composer.lock
+
+# Local System Files (i.e. cache, logs, etc.) #
+/cache
+/build/logs
+/build/coverage
+/tmp
+
+# Test Related Files #
+/phpunit.xml
+/.phpunit.result.cache
+
+# Composer
+vendor/
+
+.fuse_hidden*
+
+# phpDocumentor Logs #
+phpdoc-*
+
+# OSX #
+._*
+.Spotlight-V100
+.Trashes
+_ide_helper.php
