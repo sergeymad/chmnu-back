@@ -18,16 +18,19 @@
     "cakephp/chronos": "^1.0|^2.0",
     "doctrine/dbal": "^2.13.3|^3.1.2",
     "facade/ignition": "2.5.*",
+    "guzzlehttp/guzzle": "^7.4",
     "illuminate/support": "^8.67|^9.0",
+    "irazasyed/telegram-bot-sdk": "^3.6",
     "laravel/sanctum": "^2.15",
     "laravel/ui": "^3.3",
+    "longman/telegram-bot": "^0.77.1",
     "nunomaduro/collision": "*",
-    "php-telegram-bot/laravel": "*",
     "spatie/once": "^1.1|^2.0|^3.0",
     "symfony/console": "^5.4|^6.0",
     "symfony/finder": "^5.4|^6.0",
     "symfony/intl": "^5.4|^6.0",
-    "symfony/process": "^5.4|^6.0"
+    "symfony/process": "^5.4|^6.0",
+    "westacks/telebot": "^1.14"
   },
   "require-dev": {
     "laravel/nova-dusk-suite": "8.3.x-dev|9.3.x-dev",
@@ -39,12 +42,14 @@
   },
   "autoload": {
     "psr-4": {
-      "Laravel\\Nova\\": "src/"
+      "Laravel\\Nova\\": "src/",
+      "App\\": "app/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Laravel\\Nova\\Tests\\": "tests/"
+      "Laravel\\Nova\\Tests\\": "tests/",
+      "App\\": "App/"
     }
   },
   "extra": {

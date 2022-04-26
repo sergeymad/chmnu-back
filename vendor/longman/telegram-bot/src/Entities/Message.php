@@ -34,9 +34,11 @@ use Longman\TelegramBot\Entities\TelegramPassport\PassportData;
  * @method string                                 getForwardSignature()                       Optional. For messages forwarded from channels, signature of the post author if present
  * @method string                                 getForwardSenderName()                      Optional. Sender's name for messages forwarded from users who disallow adding a link to their account in forwarded messages
  * @method int                                    getForwardDate()                            Optional. For forwarded messages, date the original message was sent in Unix time
+ * @method bool                                   getIsAutomaticForward()                     Optional. True, if the message is a channel post that was automatically forwarded to the connected discussion group
  * @method ReplyToMessage                         getReplyToMessage()                         Optional. For replies, the original message. Note that the Message object in this field will not contain further reply_to_message fields even if it itself is a reply.
  * @method User                                   getViaBot()                                 Optional. Bot through which the message was sent
  * @method int                                    getEditDate()                               Optional. Date the message was last edited in Unix time
+ * @method bool                                   getHasProtectedContent()                    Optional. True, if the message can't be forwarded
  * @method string                                 getMediaGroupId()                           Optional. The unique identifier of a media message group this message belongs to
  * @method string                                 getAuthorSignature()                        Optional. Signature of the post author for messages in channels
  * @method MessageEntity[]                        getEntities()                               Optional. For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text
@@ -73,10 +75,11 @@ use Longman\TelegramBot\Entities\TelegramPassport\PassportData;
  * @method string                                 getConnectedWebsite()                       Optional. The domain name of the website on which the user has logged in.
  * @method PassportData                           getPassportData()                           Optional. Telegram Passport data
  * @method ProximityAlertTriggered                getProximityAlertTriggered()                Optional. Service message. A user in the chat triggered another user's proximity alert while sharing Live Location.
- * @method VoiceChatScheduled                     getVoiceChatScheduled()                     Optional. Service message: voice chat scheduled
- * @method VoiceChatStarted                       getVoiceChatStarted()                       Optional. Service message: voice chat started
- * @method VoiceChatEnded                         getVoiceChatEnded()                         Optional. Service message: voice chat ended
- * @method VoiceChatParticipantsInvited           getVoiceChatParticipantsInvited()           Optional. Service message: new participants invited to a voice chat
+ * @method VideoChatScheduled                     getVideoChatScheduled()                     Optional. Service message: voice chat scheduled
+ * @method VideoChatStarted                       getVideoChatStarted()                       Optional. Service message: voice chat started
+ * @method VideoChatEnded                         getVideoChatEnded()                         Optional. Service message: voice chat ended
+ * @method VideoChatParticipantsInvited           getVideoChatParticipantsInvited()           Optional. Service message: new participants invited to a voice chat
+ * @method WebAppData                             getWebAppData()                             Optional. Service message: data sent by a Web App
  * @method InlineKeyboard                         getReplyMarkup()                            Optional. Inline keyboard attached to the message. login_url buttons are represented as ordinary url buttons.
  */
 class Message extends Entity
@@ -119,10 +122,15 @@ class Message extends Entity
             'successful_payment'                => SuccessfulPayment::class,
             'passport_data'                     => PassportData::class,
             'proximity_alert_triggered'         => ProximityAlertTriggered::class,
-            'voice_chat_scheduled'              => VoiceChatScheduled::class,
-            'voice_chat_started'                => VoiceChatStarted::class,
-            'voice_chat_ended'                  => VoiceChatEnded::class,
-            'voice_chat_participants_invited'   => VoiceChatParticipantsInvited::class,
+            'voice_chat_scheduled'              => VoiceChatScheduled::class,           // deprecated
+            'voice_chat_started'                => VoiceChatStarted::class,             // deprecated
+            'voice_chat_ended'                  => VoiceChatEnded::class,               // deprecated
+            'voice_chat_participants_invited'   => VoiceChatParticipantsInvited::class, // deprecated
+            'video_chat_scheduled'              => VideoChatScheduled::class,
+            'video_chat_started'                => VideoChatStarted::class,
+            'video_chat_ended'                  => VideoChatEnded::class,
+            'video_chat_participants_invited'   => VideoChatParticipantsInvited::class,
+            'web_app_data'                      => WebAppData::class,
             'reply_markup'                      => InlineKeyboard::class,
         ];
     }
@@ -134,12 +142,12 @@ class Message extends Entity
      */
     public function getFullCommand(): ?string
     {
-        $text = $this->getProperty('text');
+        $text = $this->getProperty('text') ?? '';
         if (strpos($text, '/') !== 0) {
             return null;
         }
 
-        $no_EOL   = strtok($text, PHP_EOL);
+        $no_EOL = strtok($text, PHP_EOL);
         $no_space = strtok($text, ' ');
 
         //try to understand which separator \n or space divide /command from text
@@ -157,7 +165,7 @@ class Message extends Entity
             return $command;
         }
 
-        $full_command = $this->getFullCommand();
+        $full_command = $this->getFullCommand() ?? '';
         if (strpos($full_command, '/') !== 0) {
             return null;
         }
@@ -165,7 +173,7 @@ class Message extends Entity
 
         //check if command is followed by bot username
         $split_cmd = explode('@', $full_command);
-        if (!isset($split_cmd[1])) {
+        if (! isset($split_cmd[1])) {
             //command is not followed by name
             return $full_command;
         }
@@ -181,7 +189,7 @@ class Message extends Entity
     /**
      * For text messages, the actual UTF-8 text of the message, 0-4096 characters.
      *
-     * @param bool $without_cmd
+     * @param  bool  $without_cmd
      *
      * @return string|null
      */
@@ -254,14 +262,15 @@ class Message extends Entity
             'successful_payment',
             'passport_data',
             'proximity_alert_triggered',
-            'voice_chat_scheduled',
-            'voice_chat_started',
-            'voice_chat_ended',
-            'voice_chat_participants_invited',
+            'video_chat_scheduled',
+            'video_chat_started',
+            'video_chat_ended',
+            'video_chat_participants_invited',
+            'web_app_data',
             'reply_markup',
         ];
 
-        $is_command = strlen($this->getCommand()) > 0;
+        $is_command = $this->getCommand() !== null;
         foreach ($types as $type) {
             if ($this->getProperty($type) !== null) {
                 if ($is_command && $type === 'text') {

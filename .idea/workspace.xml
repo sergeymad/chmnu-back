@@ -1,7 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="024cecec-dcfc-4e89-ae22-fc153f4cea00" name="Changes" comment="" />
+    <list default="true" id="024cecec-dcfc-4e89-ae22-fc153f4cea00" name="Changes" comment="[+] made a simple tg bot logic for demonstration">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/CommonMarkConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/CommonMarkConverter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/ConverterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/ConverterInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Delimiter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Delimiter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/DelimiterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/DelimiterInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/DelimiterStack.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/DelimiterStack.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/DelimiterProcessorCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/DelimiterProcessorCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/DelimiterProcessorCollectionInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/DelimiterProcessorCollectionInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/DelimiterProcessorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/DelimiterProcessorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/StaggeredDelimiterProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Delimiter/Processor/StaggeredDelimiterProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Event/AbstractEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Event/AbstractEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Event/DocumentParsedEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Event/DocumentParsedEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Event/DocumentPreParsedEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Event/DocumentPreParsedEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/AttributesExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/AttributesExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Event/AttributesListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Event/AttributesListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Node/Attributes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Node/Attributes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Node/AttributesInline.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Node/AttributesInline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Parser/AttributesInlineParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Parser/AttributesInlineParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Util/AttributesHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Attributes/Util/AttributesHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Autolink/AutolinkExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Autolink/AutolinkExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/DisallowedRawHtml/DisallowedRawHtmlExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/DisallowedRawHtml/DisallowedRawHtmlExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/ExtensionInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/ExtensionInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/ExternalLink/ExternalLinkExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/ExternalLink/ExternalLinkExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/ExternalLink/ExternalLinkProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/ExternalLink/ExternalLinkProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Event/AnonymousFootnotesListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Event/AnonymousFootnotesListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Event/GatherFootnotesListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Event/GatherFootnotesListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Event/NumberFootnotesListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Event/NumberFootnotesListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/FootnoteExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/FootnoteExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/Footnote.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/Footnote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/FootnoteBackref.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/FootnoteBackref.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/FootnoteContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/FootnoteContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/FootnoteRef.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Node/FootnoteRef.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/GithubFlavoredMarkdownExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/GithubFlavoredMarkdownExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalink.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalink.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/HeadingPermalink/HeadingPermalinkRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/InlinesOnly/ChildRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/InlinesOnly/ChildRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/InlinesOnly/InlinesOnlyExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/InlinesOnly/InlinesOnlyExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Generator/CallbackGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Generator/CallbackGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Generator/MentionGeneratorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Generator/MentionGeneratorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Generator/StringTemplateLinkGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Generator/StringTemplateLinkGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Mention.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/Mention.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/MentionExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/MentionExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/MentionParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Mention/MentionParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/Quote.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/Quote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/QuoteParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/QuoteParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/QuoteProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/QuoteProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/SmartPunctExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/SmartPunct/SmartPunctExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/Strikethrough.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/Strikethrough.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/StrikethroughDelimiterProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/StrikethroughDelimiterProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/StrikethroughExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/StrikethroughExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/StrikethroughRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Strikethrough/StrikethroughRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/Table.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/Table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableCell.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableCell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableCellRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableCellRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableRow.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableRow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableRowRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableRowRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableSectionRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/Table/TableSectionRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Node/TableOfContents.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Node/TableOfContents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Node/TableOfContentsPlaceholder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Node/TableOfContentsPlaceholder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/AsIsNormalizerStrategy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/AsIsNormalizerStrategy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/FlatNormalizerStrategy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/FlatNormalizerStrategy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/NormalizerStrategyInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/NormalizerStrategyInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/RelativeNormalizerStrategy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/Normalizer/RelativeNormalizerStrategy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsGeneratorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsGeneratorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsPlaceholderParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsPlaceholderParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsPlaceholderRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TableOfContents/TableOfContentsPlaceholderRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListItemMarker.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListItemMarker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListItemMarkerParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListItemMarkerParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListItemMarkerRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Extension/TaskList/TaskListItemMarkerRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/GithubFlavoredMarkdownConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/GithubFlavoredMarkdownConverter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Input/MarkdownInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Input/MarkdownInput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Input/MarkdownInputInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Input/MarkdownInputInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/MarkdownConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/MarkdownConverter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/MarkdownConverterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/MarkdownConverterInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Node/Node.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Node/Node.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Node/NodeWalker.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Node/NodeWalker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Node/NodeWalkerEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Node/NodeWalkerEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Normalizer/SlugNormalizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Normalizer/SlugNormalizer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Normalizer/TextNormalizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Normalizer/TextNormalizer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Normalizer/TextNormalizerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Normalizer/TextNormalizerInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/Reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/Reference.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceMap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceMapInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceMapInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Reference/ReferenceParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/ArrayCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/ArrayCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/Html5EntityDecoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/Html5EntityDecoder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/LinkParserHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/LinkParserHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/PrioritizedList.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/PrioritizedList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/RegexHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/RegexHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/UrlEncoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/UrlEncoder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/Xml.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/league/commonmark/src/Util/Xml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/ChatAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/ChatAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/BotCommandScope/BotCommandScopeDefault.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/BotCommandScope/BotCommandScopeDefault.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatInviteLink.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatInviteLink.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberAdministrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberAdministrator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberBanned.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberBanned.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberLeft.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberLeft.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberMember.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberMember.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberRestricted.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ChatMember/ChatMemberRestricted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Entity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Factory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/InlineKeyboardButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/InlineKeyboardButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/InputMedia/InputMediaAudio.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/InputMedia/InputMediaAudio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/KeyboardButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/KeyboardButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/MessageEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/MessageEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ServerResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/ServerResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Sticker.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Sticker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/StickerSet.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/StickerSet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatEnded.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatEnded.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatParticipantsInvited.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatParticipantsInvited.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatScheduled.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatScheduled.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatStarted.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/VoiceChatStarted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/WebhookInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/WebhookInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Telegram.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Telegram.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/container/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/psr/container/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/container/src/ContainerExceptionInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/psr/container/src/ContainerExceptionInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/error-handler/Error/UndefinedMethodError.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/error-handler/Error/UndefinedMethodError.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,6 +364,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -212,6 +383,14 @@
       <updated>1650912273194</updated>
       <workItem from="1650912274813" duration="5456000" />
     </task>
+    <task id="LOCAL-00001" summary="[+] made a simple tg bot logic for demonstration">
+      <created>1651005526040</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651005526040</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,5 +407,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[+] made a simple tg bot logic for demonstration" />
+    <option name="LAST_COMMIT_MESSAGE" value="[+] made a simple tg bot logic for demonstration" />
   </component>
 </project>

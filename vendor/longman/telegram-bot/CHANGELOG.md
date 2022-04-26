@@ -5,7 +5,7 @@ Exclamation symbols (:exclamation:) note something of importance e.g. breaking c
 
 ## [Unreleased]
 ### Notes
-- [:ledger: View file changes][Unreleased] ∙ [:page_with_curl: DB migration script][unreleased-sql-migration]
+- [:ledger: View file changes][Unreleased]
 ### Added
 ### Changed
 ### Deprecated
@@ -13,11 +13,58 @@ Exclamation symbols (:exclamation:) note something of importance e.g. breaking c
 ### Fixed
 ### Security
 
+## [0.77.1] - 2022-04-24
+### Notes
+- [:ledger: View file changes][0.77.1]
+### Fixed
+- PHP8+ `mixed` type hint removed
+
+## [0.77.0] - 2022-04-24
+### Notes
+- [:ledger: View file changes][0.77.0] ∙ [:page_with_curl: DB migration script][0.77.0-sql-migration]
+### Added
+- Bot API 6.0 (@TiiFuchs) (#1318)
+### Deprecated
+- Telegram changed `voice_chat_X` to `video_chat_X`. `VoiceChatX` event classes are deprecated, use new `VideoChatX` event classes instead.
+### Fixed
+- Return correct data in `Entity::jsonSerialize` (@TiiFuchs)
+
+## [0.76.1] - 2022-03-30
+### Notes
+- [:ledger: View file changes][0.76.1]
+### Fixed
+- Fix Entity serialising for Keyboards (@TiiFuchs) (#1304)
+
+## [0.76.0] - 2022-03-20
+### Notes
+- [:ledger: View file changes][0.76.0]
+### Added
+- Bot API 5.6 (@TiiFuchs) (#1275)
+- Bot API 5.7 (@TiiFuchs) (#1284)
+- PSR3 (psr/log) version 2 and 3 compatible (@noplanman) (#1287)
+- Entity implements and uses JsonSerializable now (@TiiFuchs)
+- Test with PHP 8.1 on Travis CI (@osavchenko) (#1291)
+### Changed
+- Bugfix: Fixed condition in \Longman\TelegramBot\Entities\Chat::isGroupChat() that previously also counted super groups and channels. (@TiiFuchs)
+
+## [0.75.0] - 2021-12-29
+### Notes
+- [:ledger: View file changes][0.75.0] ∙ [:page_with_curl: DB migration script][0.75.0-sql-migration]
+### Added
+- Ability to directly set commands paths. (@wright-tw, @noplanman) (#1252)
+- Bot API 5.4. (@TiiFuchs, @noplanman) (#1266)
+- Bot API 5.5. (@TiiFuchs, @noplanman) (#1267)
+- The field `message_auto_delete_time` was added to the Chat Entity (@TiiFuchs) (#1265)
+### Removed
+- [:exclamation:][0.75.0-bc-removed-chatactions] Removed deprecated `ChatAction::` `RECORD_AUDIO` and `UPLOAD_AUDIO`. Use `RECORD_VOICE` and `UPLOAD_VOICE` instead. (@TiiFuchs) (#1267)
+### Fixed
+- PHP 8.1 deprecations. (@maxgorovenko) (#1260)
+
 ## [0.74.0] - 2021-06-26
 ### Notes
 - [:ledger: View file changes][0.74.0]
 ### Added
-- Bot API 5.3 (Personalized Commands, Keyboard Placeholders). (@TiiFuchs, @noplanman) (#1229, #1231)
+- [:exclamation:][0.74.0-bc-chatmember-subentities] Bot API 5.3 (Personalized Commands, Keyboard Placeholders). (@TiiFuchs, @noplanman) (#1229, #1231)
 
 ## [0.73.1] - 2021-06-20
 ### Notes
@@ -537,7 +584,10 @@ Exclamation symbols (:exclamation:) note something of importance e.g. breaking c
 ### Deprecated
 - Move `hideKeyboard` to `removeKeyboard`.
 
-[unreleased-sql-migration]: #
+[0.77.0-sql-migration]: https://github.com/php-telegram-bot/core/tree/master/utils/db-schema-update/0.76.1-0.77.0.sql
+[0.75.0-sql-migration]: https://github.com/php-telegram-bot/core/tree/master/utils/db-schema-update/0.74.0-0.75.0.sql
+[0.75.0-bc-removed-chatactions]: https://github.com/php-telegram-bot/core/wiki/Breaking-backwards-compatibility#removed-deprecated-chatactions
+[0.74.0-bc-chatmember-subentities]: https://github.com/php-telegram-bot/core/wiki/Breaking-backwards-compatibility#chatmember-subentities
 [0.73.0-sql-migration]: https://github.com/php-telegram-bot/core/tree/master/utils/db-schema-update/0.72.0-0.73.0.sql
 [0.72.0-sql-migration]: https://github.com/php-telegram-bot/core/tree/master/utils/db-schema-update/0.71.0-0.72.0.sql
 [0.70.0-sql-migration]: https://github.com/php-telegram-bot/core/tree/master/utils/db-schema-update/0.64.0-0.70.0.sql
@@ -572,6 +622,11 @@ Exclamation symbols (:exclamation:) note something of importance e.g. breaking c
 [Tidelift]: https://tidelift.com/subscription/pkg/packagist-longman-telegram-bot?utm_source=packagist-longman-telegram-bot&utm_medium=referral&utm_campaign=changelog
 
 [Unreleased]: https://github.com/php-telegram-bot/core/compare/master...develop
+[0.77.1]: https://github.com/php-telegram-bot/core/compare/0.77.0...0.77.1
+[0.77.0]: https://github.com/php-telegram-bot/core/compare/0.76.1...0.77.0
+[0.76.1]: https://github.com/php-telegram-bot/core/compare/0.76.0...0.76.1
+[0.76.0]: https://github.com/php-telegram-bot/core/compare/0.75.0...0.76.0
+[0.75.0]: https://github.com/php-telegram-bot/core/compare/0.74.0...0.75.0
 [0.74.0]: https://github.com/php-telegram-bot/core/compare/0.73.1...0.74.0
 [0.73.1]: https://github.com/php-telegram-bot/core/compare/0.73.0...0.73.1
 [0.73.0]: https://github.com/php-telegram-bot/core/compare/0.72.0...0.73.0

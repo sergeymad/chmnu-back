@@ -7,7 +7,7 @@
 
 A Telegram Bot based on the official [Telegram Bot API]
 
-[![API Version](https://img.shields.io/badge/Bot%20API-5.3%20%28June%202021%29-32a2da.svg)](https://core.telegram.org/bots/api#june-25-2021)
+[![API Version](https://img.shields.io/badge/Bot%20API-6.0%20%28April%202022%29-32a2da.svg)](https://core.telegram.org/bots/api#april-16-2022)
 [![Join the bot support group on Telegram](https://img.shields.io/badge/telegram-@PHP__Telegram__Bot__Support-64659d.svg)](https://telegram.me/PHP_Telegram_Bot_Support)
 [![Donate](https://img.shields.io/badge/%F0%9F%92%99-Donate%20%2F%20Support%20Us-blue.svg)](#donate)
 
@@ -78,7 +78,7 @@ This Bot aims to provide a platform where one can simply write a bot and have in
 
 The Bot can:
 - Retrieve updates with [webhook](#webhook-installation) and [getUpdates](#getupdates-installation) methods.
-- Supports all types and methods according to Telegram Bot API 5.3 (June 2021).
+- Supports all types and methods according to Telegram Bot API 6.0 (April 2022).
 - Supports supergroups.
 - Handle commands in chat with other bots.
 - Manage Channel from the bot admin interface.
@@ -389,15 +389,15 @@ The reason for denying an update can be defined with the `$reason` parameter. Th
 
 ### Types
 
-All types are implemented according to Telegram API 5.3 (June 2021).
+All types are implemented according to Telegram API 6.0 (April 2022).
 
 ### Inline Query
 
-Full support for inline query according to Telegram API 5.3 (June 2021).
+Full support for inline query according to Telegram API 6.0 (April 2022).
 
 ### Methods
 
-All methods are implemented according to Telegram API 5.3 (June 2021).
+All methods are implemented according to Telegram API 6.0 (April 2022).
 
 #### Send Message
 
@@ -702,7 +702,7 @@ Credit list in [CREDITS](CREDITS)
 [getUpdatesCLI.php]: https://github.com/php-telegram-bot/example-bot/blob/master/getUpdatesCLI.php "example getUpdatesCLI.php"
 [AdminCommands-folder]: https://github.com/php-telegram-bot/core/tree/master/src/Commands/AdminCommands "Admin commands folder"
 [ExampleCommands-folder]: https://github.com/php-telegram-bot/example-bot/blob/master/Commands "Example commands folder"
-[ImageCommand.php]: https://github.com/php-telegram-bot/example-bot/blob/master/Commands/ImageCommand.php "example /image command"
+[ImageCommand.php]: https://github.com/php-telegram-bot/example-bot/blob/master/Commands/Other/ImageCommand.php "example /image command"
 [WhoamiCommand.php]: https://github.com/php-telegram-bot/example-bot/blob/master/Commands/WhoamiCommand.php "example /whoami command"
 [HelpCommand.php]: https://github.com/php-telegram-bot/example-bot/blob/master/Commands/HelpCommand.php "example /help command"
 [SendtochannelCommand.php]: https://github.com/php-telegram-bot/core/blob/master/src/Commands/AdminCommands/SendtochannelCommand.php "/sendtochannel admin command"

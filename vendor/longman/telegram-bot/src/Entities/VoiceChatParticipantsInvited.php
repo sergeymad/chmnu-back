@@ -16,6 +16,8 @@ namespace Longman\TelegramBot\Entities;
  *
  * Represents a service message about new members invited to a voice chat
  *
+ * @deprecated See VideoChatParticipantsInvited instead
+ *
  * @link https://core.telegram.org/bots/api#voicechatparticipantsinvited
  *
  * @method User[]      getUsers()       Optional. New members that were invited to the voice chat

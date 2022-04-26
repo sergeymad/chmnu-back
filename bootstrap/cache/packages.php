@@ -10,11 +10,42 @@
       'Flare' => 'Facade\\Ignition\\Facades\\Flare',
     ),
   ),
+  'fideloper/proxy' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
+    ),
+  ),
   'fruitcake/laravel-cors' => 
   array (
     'providers' => 
     array (
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
+    ),
+  ),
+  'irazasyed/telegram-bot-sdk' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Telegram\\Bot\\Laravel\\TelegramServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Telegram' => 'Telegram\\Bot\\Laravel\\Facades\\Telegram',
+    ),
+  ),
+  'laravel/dusk' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Dusk\\DuskServiceProvider',
+    ),
+  ),
+  'laravel/nova-dusk-suite' => 
+  array (
+    'dont-discover' => 
+    array (
     ),
   ),
   'laravel/sail' => 
@@ -31,11 +62,25 @@
       0 => 'Laravel\\Sanctum\\SanctumServiceProvider',
     ),
   ),
+  'laravel/scout' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Scout\\ScoutServiceProvider',
+    ),
+  ),
   'laravel/tinker' => 
   array (
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'laravel/ui' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Ui\\UiServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -50,6 +95,24 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'spatie/laravel-ray' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\LaravelRay\\RayServiceProvider',
+    ),
+  ),
+  'westacks/telebot' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'WeStacks\\TeleBot\\Laravel\\TeleBotServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'TeleBot' => 'WeStacks\\TeleBot\\Laravel\\TeleBot',
     ),
   ),
 );

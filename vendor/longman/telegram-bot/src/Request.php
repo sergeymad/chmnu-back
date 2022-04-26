@@ -59,11 +59,15 @@ use Throwable;
  * @method static ServerResponse restrictChatMember(array $data)              Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all permissions to lift restrictions from a user. Returns True on success.
  * @method static ServerResponse promoteChatMember(array $data)               Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to demote a user. Returns True on success.
  * @method static ServerResponse setChatAdministratorCustomTitle(array $data) Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns True on success.
+ * @method static ServerResponse banChatSenderChat(array $data)               Use this method to ban a channel chat in a supergroup or a channel. Until the chat is unbanned, the owner of the banned chat won't be able to send messages on behalf of any of their channels. The bot must be an administrator in the supergroup or channel for this to work and must have the appropriate administrator rights. Returns True on success.
+ * @method static ServerResponse unbanChatSenderChat(array $data)             Use this method to unban a previously banned channel chat in a supergroup or channel. The bot must be an administrator for this to work and must have the appropriate administrator rights. Returns True on success.
  * @method static ServerResponse setChatPermissions(array $data)              Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the can_restrict_members admin rights. Returns True on success.
  * @method static ServerResponse exportChatInviteLink(array $data)            Use this method to generate a new invite link for a chat. Any previously generated link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new invite link as String on success.
  * @method static ServerResponse createChatInviteLink(array $data)            Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. The link can be revoked using the method revokeChatInviteLink. Returns the new invite link as ChatInviteLink object.
  * @method static ServerResponse editChatInviteLink(array $data)              Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the edited invite link as a ChatInviteLink object.
  * @method static ServerResponse revokeChatInviteLink(array $data)            Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the revoked invite link as ChatInviteLink object.
+ * @method static ServerResponse approveChatJoinRequest(array $data)          Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the can_invite_users administrator right. Returns True on success.
+ * @method static ServerResponse declineChatJoinRequest(array $data)          Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the can_invite_users administrator right. Returns True on success.
  * @method static ServerResponse setChatPhoto(array $data)                    Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
  * @method static ServerResponse deleteChatPhoto(array $data)                 Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
  * @method static ServerResponse setChatTitle(array $data)                    Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
@@ -82,7 +86,11 @@ use Throwable;
  * @method static ServerResponse answerInlineQuery(array $data)               Use this method to send answers to an inline query. On success, True is returned.
  * @method static ServerResponse setMyCommands(array $data)                   Use this method to change the list of the bot's commands. Returns True on success.
  * @method static ServerResponse deleteMyCommands(array $data)                Use this method to delete the list of the bot's commands for the given scope and user language. After deletion, higher level commands will be shown to affected users. Returns True on success.
- * @method static ServerResponse getMyCommands()                              Use this method to get the current list of the bot's commands. Requires no parameters. Returns Array of BotCommand on success.
+ * @method static ServerResponse getMyCommands(array $data)                   Use this method to get the current list of the bot's commands. Requires no parameters. Returns Array of BotCommand on success.
+ * @method static ServerResponse setChatMenuButton(array $data)               Use this method to change the bot's menu button in a private chat, or the default menu button. Returns True on success.
+ * @method static ServerResponse getChatMenuButton(array $data)               Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns MenuButton on success.
+ * @method static ServerResponse setMyDefaultAdministratorRights(array $data) Use this method to change the default administrator rights requested by the bot when it's added as an administrator to groups or channels. These rights will be suggested to users, but they are are free to modify the list before adding the bot. Returns True on success.
+ * @method static ServerResponse getMyDefaultAdministratorRights(array $data) Use this method to get the current default administrator rights of the bot. Returns ChatAdministratorRights on success.
  * @method static ServerResponse editMessageText(array $data)                 Use this method to edit text and game messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
  * @method static ServerResponse editMessageCaption(array $data)              Use this method to edit captions of messages sent by the bot or via the bot (for inline bots). On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned.
  * @method static ServerResponse editMessageMedia(array $data)                Use this method to edit audio, document, photo, or video messages. On success, if the edited message was sent by the bot, the edited Message is returned, otherwise True is returned.
@@ -96,6 +104,7 @@ use Throwable;
  * @method static ServerResponse setStickerPositionInSet(array $data)         Use this method to move a sticker in a set created by the bot to a specific position. Returns True on success.
  * @method static ServerResponse deleteStickerFromSet(array $data)            Use this method to delete a sticker from a set created by the bot. Returns True on success.
  * @method static ServerResponse setStickerSetThumb(array $data)              Use this method to set the thumbnail of a sticker set. Animated thumbnails can be set for animated sticker sets only. Returns True on success.
+ * @method static ServerResponse answerWebAppQuery(array $data)               Use this method to set the result of an interaction with a Web App and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a SentWebAppMessage object is returned.
  * @method static ServerResponse sendInvoice(array $data)                     Use this method to send invoices. On success, the sent Message is returned.
  * @method static ServerResponse answerShippingQuery(array $data)             If you sent an invoice requesting a shipping address and the parameter is_flexible was specified, the Bot API will send an Update with a shipping_query field to the bot. Use this method to reply to shipping queries. On success, True is returned.
  * @method static ServerResponse answerPreCheckoutQuery(array $data)          Once the user has confirmed their payment and shipping details, the Bot API sends the final confirmation in the form of an Update with the field pre_checkout_query. Use this method to respond to such pre-checkout queries. On success, True is returned.
@@ -199,11 +208,15 @@ class Request
         'restrictChatMember',
         'promoteChatMember',
         'setChatAdministratorCustomTitle',
+        'banChatSenderChat',
+        'unbanChatSenderChat',
         'setChatPermissions',
         'exportChatInviteLink',
         'createChatInviteLink',
         'editChatInviteLink',
         'revokeChatInviteLink',
+        'approveChatJoinRequest',
+        'declineChatJoinRequest',
         'setChatPhoto',
         'deleteChatPhoto',
         'setChatTitle',
@@ -223,6 +236,10 @@ class Request
         'setMyCommands',
         'deleteMyCommands',
         'getMyCommands',
+        'setChatMenuButton',
+        'getChatMenuButton',
+        'setMyDefaultAdministratorRights',
+        'getMyDefaultAdministratorRights',
         'editMessageText',
         'editMessageCaption',
         'editMessageMedia',
@@ -236,6 +253,7 @@ class Request
         'setStickerPositionInSet',
         'deleteStickerFromSet',
         'setStickerSetThumb',
+        'answerWebAppQuery',
         'sendInvoice',
         'answerShippingQuery',
         'answerPreCheckoutQuery',
@@ -258,7 +276,12 @@ class Request
         'getMe',
         'logOut',
         'close',
+        'deleteMyCommands',
         'getMyCommands',
+        'setChatMenuButton',
+        'getChatMenuButton',
+        'setMyDefaultAdministratorRights',
+        'getMyDefaultAdministratorRights',
     ];
 
     /**
@@ -281,8 +304,8 @@ class Request
         'setChatPhoto'        => ['photo'],
         'sendSticker'         => ['sticker'],
         'uploadStickerFile'   => ['png_sticker'],
-        'createNewStickerSet' => ['png_sticker', 'tgs_sticker'],
-        'addStickerToSet'     => ['png_sticker', 'tgs_sticker'],
+        'createNewStickerSet' => ['png_sticker', 'tgs_sticker', 'webm_sticker'],
+        'addStickerToSet'     => ['png_sticker', 'tgs_sticker', 'webm_sticker'],
         'setStickerSetThumb'  => ['thumb'],
     ];
 
@@ -924,7 +947,8 @@ class Request
      * @deprecated
      * @see Request::banChatMember()
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return ServerResponse
      */
     public static function kickChatMember(array $data = []): ServerResponse
@@ -938,7 +962,8 @@ class Request
      * @deprecated
      * @see Request::getChatMemberCount()
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return ServerResponse
      */
     public static function getChatMembersCount(array $data = []): ServerResponse

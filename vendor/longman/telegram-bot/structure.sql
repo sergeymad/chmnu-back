@@ -80,10 +80,12 @@ CREATE TABLE IF NOT EXISTS `message` (
   `forward_signature` TEXT NULL DEFAULT NULL COMMENT 'For messages forwarded from channels, signature of the post author if present',
   `forward_sender_name` TEXT NULL DEFAULT NULL COMMENT 'Sender''s name for messages forwarded from users who disallow adding a link to their account in forwarded messages',
   `forward_date` timestamp NULL DEFAULT NULL COMMENT 'date the original message was sent in timestamp format',
+  `is_automatic_forward` tinyint(1) DEFAULT 0 COMMENT 'True, if the message is a channel post that was automatically forwarded to the connected discussion group',
   `reply_to_chat` bigint NULL DEFAULT NULL COMMENT 'Unique chat identifier',
   `reply_to_message` bigint UNSIGNED DEFAULT NULL COMMENT 'Message that this message is reply to',
   `via_bot` bigint NULL DEFAULT NULL COMMENT 'Optional. Bot through which the message was sent',
   `edit_date` timestamp NULL DEFAULT NULL COMMENT 'Date the message was last edited in Unix time',
+  `has_protected_content` tinyint(1) DEFAULT 0 COMMENT 'True, if the message can''t be forwarded',
   `media_group_id` TEXT COMMENT 'The unique identifier of a media message group this message belongs to',
   `author_signature` TEXT COMMENT 'Signature of the post author for messages in channels',
   `text` TEXT COMMENT 'For text messages, the actual UTF-8 text of the message max message length 4096 char utf8mb4',
@@ -121,10 +123,11 @@ CREATE TABLE IF NOT EXISTS `message` (
   `connected_website` TEXT NULL COMMENT 'The domain name of the website on which the user has logged in.',
   `passport_data` TEXT NULL COMMENT 'Telegram Passport data',
   `proximity_alert_triggered` TEXT NULL COMMENT 'Service message. A user in the chat triggered another user''s proximity alert while sharing Live Location.',
-  `voice_chat_scheduled` TEXT COMMENT 'VoiceChatScheduled object. Message is a service message: voice chat scheduled',
-  `voice_chat_started` TEXT COMMENT 'VoiceChatStarted object. Message is a service message: voice chat started',
-  `voice_chat_ended` TEXT COMMENT 'VoiceChatEnded object. Message is a service message: voice chat ended',
-  `voice_chat_participants_invited` TEXT COMMENT 'VoiceChatParticipantsInvited object. Message is a service message: new participants invited to a voice chat',
+  `video_chat_scheduled` TEXT COMMENT 'Service message: video chat scheduled',
+  `video_chat_started` TEXT COMMENT 'Service message: video chat started',
+  `video_chat_ended` TEXT COMMENT 'Service message: video chat ended',
+  `video_chat_participants_invited` TEXT COMMENT 'Service message: new participants invited to a video chat',
+  `web_app_data` TEXT COMMENT 'Service message: data sent by a Web App',
   `reply_markup` TEXT NULL COMMENT 'Inline keyboard attached to the message',
 
   PRIMARY KEY (`chat_id`, `id`),
@@ -260,6 +263,21 @@ CREATE TABLE IF NOT EXISTS `chat_member_updated` (
   FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
+CREATE TABLE IF NOT EXISTS `chat_join_request` (
+  `id` BIGINT UNSIGNED AUTO_INCREMENT COMMENT 'Unique identifier for this entry',
+  `chat_id` BIGINT NOT NULL COMMENT 'Chat to which the request was sent',
+  `user_id` BIGINT NOT NULL COMMENT 'User that sent the join request',
+  `date` TIMESTAMP NOT NULL COMMENT 'Date the request was sent in Unix time',
+  `bio` TEXT NULL COMMENT 'Optional. Bio of the user',
+  `invite_link` TEXT NULL COMMENT 'Optional. Chat invite link that was used by the user to send the join request',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT 'Entry date creation',
+
+  PRIMARY KEY (`id`),
+
+  FOREIGN KEY (`chat_id`) REFERENCES `chat` (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
 CREATE TABLE IF NOT EXISTS `telegram_update` (
   `id` bigint UNSIGNED COMMENT 'Update''s unique identifier',
   `chat_id` bigint NULL DEFAULT NULL COMMENT 'Unique chat identifier',
@@ -276,6 +294,7 @@ CREATE TABLE IF NOT EXISTS `telegram_update` (
   `poll_answer_poll_id` bigint UNSIGNED DEFAULT NULL COMMENT 'A user changed their answer in a non-anonymous poll. Bots receive new votes only in polls that were sent by the bot itself.',
   `my_chat_member_updated_id` BIGINT UNSIGNED NULL COMMENT 'The bot''s chat member status was updated in a chat. For private chats, this update is received only when the bot is blocked or unblocked by the user.',
   `chat_member_updated_id` BIGINT UNSIGNED NULL COMMENT 'A chat member''s status was updated in a chat. The bot must be an administrator in the chat and must explicitly specify “chat_member” in the list of allowed_updates to receive these updates.',
+  `chat_join_request_id` BIGINT UNSIGNED NULL COMMENT 'A request to join the chat has been sent',
 
   PRIMARY KEY (`id`),
   KEY `message_id` (`message_id`),
@@ -292,6 +311,7 @@ CREATE TABLE IF NOT EXISTS `telegram_update` (
   KEY `poll_answer_poll_id` (`poll_answer_poll_id`),
   KEY `my_chat_member_updated_id` (`my_chat_member_updated_id`),
   KEY `chat_member_updated_id` (`chat_member_updated_id`),
+  KEY `chat_join_request_id` (`chat_join_request_id`),
 
   FOREIGN KEY (`chat_id`, `message_id`) REFERENCES `message` (`chat_id`, `id`),
   FOREIGN KEY (`edited_message_id`) REFERENCES `edited_message` (`id`),
@@ -305,7 +325,8 @@ CREATE TABLE IF NOT EXISTS `telegram_update` (
   FOREIGN KEY (`poll_id`) REFERENCES `poll` (`id`),
   FOREIGN KEY (`poll_answer_poll_id`) REFERENCES `poll_answer` (`poll_id`),
   FOREIGN KEY (`my_chat_member_updated_id`) REFERENCES `chat_member_updated` (`id`),
-  FOREIGN KEY (`chat_member_updated_id`) REFERENCES `chat_member_updated` (`id`)
+  FOREIGN KEY (`chat_member_updated_id`) REFERENCES `chat_member_updated` (`id`),
+  FOREIGN KEY (`chat_join_request_id`) REFERENCES `chat_join_request` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 CREATE TABLE IF NOT EXISTS `conversation` (

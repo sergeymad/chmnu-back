@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Telegram\Bot\Laravel\Facades\Telegram;
+use Illuminate\Support\Facades\Http;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$updates = Telegram::getWebhookUpdates();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
+
+Route::post('/tg', [App\Http\Controllers\TgBotController::class, 'handler']);
