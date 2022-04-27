@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Telegram\Bot\Keyboard\Keyboard;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Routing\Controller as BaseController;
 use Log;
 
@@ -19,39 +20,68 @@ class TgBotController extends BaseController
     public function handler(Request $request)
     {
 
+        if(isset($request['callback_query'])){
+
+            $this->send_answerCallbackQuery('answerCallbackQuery', ['callback_query_id'=> $request['callback_query']['id'], 'text' => 'СООБЩЕНИЕ', 'show_alert' => true],$request['callback_query']['from']['id']);
+        }
+
+
         if (isset($request['callback_query'])) {
             $message = json_decode(file_get_contents('php://input'), true);
-            Log:info($message);
-            $this->chat_id = $request['callback_query']['message']['from']['id'];
+
+            $this->chat_id = $request['callback_query']['from']['id'];
             if ($request['callback_query']['data'] == 'top') {
 
-                $this->popularQuestion(412659845);
+                $this->popularQuestion($this->chat_id);
 
             }else if ($request['callback_query']['data'] == 'immigration') {
-                $this->immigrationMenu(412659845);
+                $this->changePath($this->chat_id,'search');
+                $response = Telegram::sendMessage([
+                    'chat_id' => $this->chat_id,
+                    'text' => 'Напишіть, будь ласка, назву країни',
+                ]);
+                //$this->immigrationMenu($this->chat_id);
             }
             else if ($request['callback_query']['data'] == 'useful_contacts') {
-                $this->contacts(412659845);
+                $this->contacts($this->chat_id);
             }
-            else if ($request['callback_query']['data'] == 'question') {
-                $this->question(412659845);
+            else if ( str_starts_with($request['callback_query']['data'],'question_')) {
+                Log::info($request['callback_query']['data']);
+                $this->question($this->chat_id,str_replace('question_','',$request['callback_query']['data']));
             }
             else if ($request['callback_query']['data'] == 'empty') {
                 $response = Telegram::sendMessage([
-                    'chat_id' => 412659845,
+                    'chat_id' => $this->chat_id,
                     'text' => 'К сожалению данный пункт пока-что не работает',
                 ]);
             }
             else if ($request['callback_query']['data'] == 'back') {
-                $this->mainMenu(412659845);
+                $this->mainMenu($this->chat_id);
             }else{
-                $this->mainMenu(412659845);
+                $this->mainMenu($this->chat_id);
             }
         } else {
-            if ($this->chat_id == 0) {
 
-                $this->chat_id = $request['message']['from']['id'];
-                $this->gender(412659845);
+             $users = DB::table('bot_users')->where('chat_id',412659845)->get();
+            $this->chat_id = $request['message']['from']['id'];
+
+            if(count($users)==0){
+                DB::table('bot_users')->insert([
+                    'chat_id' => $request['message']['from']['id'],
+                    'name' => $request['message']['from']['first_name']." ".$request['message']['from']['last_name']
+                ]);
+                $this->gender($this->chat_id);
+
+            }
+
+            if($request['message']['text']=="/main_menu"){
+                $this->mainMenu($this->chat_id);
+            }else if($request['message']['text']=="/contacts"){
+                $this->contacts($this->chat_id);
+            }else if($users->first()->current_step=='search'){
+                $this->immigrationMenu($this->chat_id,$request['message']['text']);
+            }else{
+                $this->mainMenu($this->chat_id);
             }
         }
 
@@ -63,11 +93,17 @@ class TgBotController extends BaseController
 
 
     }
-    public static function send_answerCallbackQuery($token, $callback_query_id, $text, $show_alert){
-        file_get_contents("https://api.telegram.org/bot".$token."/answerCallbackQuery?callback_query_id=".$callback_query_id."&text=".$text."&show_alert=".$show_alert);
+    public function send_answerCallbackQuery($method, $data, $client){
+        $data["parse_mode"] = "html";
+        $ch = curl_init("https://api.telegram.org/---токен---/$method");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_close($ch);
     }
     public function mainMenu($chat_id)
     {
+        $this->changePath($chat_id,'Main menu');
         $inline_keyboard = json_encode([
             'inline_keyboard' => [
                 [
@@ -93,58 +129,62 @@ class TgBotController extends BaseController
             'reply_markup' => $inline_keyboard
         ]);
     }
-    public function immigrationMenu($chat_id)
+    public function immigrationMenu($chat_id,$country_name)
     {
-        $inline_keyboard = json_encode([
-            'inline_keyboard' => [
+        $country = DB::table('bot_country')->where('name','LIKE',$country_name)->get()->first();
+        if(is_null($country)){
+            $response = Telegram::sendMessage([
+                'chat_id' => $chat_id,
+                'text' => 'Нажаль сталась помилка і нам не вдалося знайти цю країну. Спробуйте, будь ласка, іншу країну',
+            ]);
+        }else{
+           // $this->changePath($chat_id,'Immigration menu');
 
-                [
-                    ['text' => 'Правила в\'їзду до країни', 'callback_data' => 'question'],
-                ],
-                [
-                    [ 'text' => 'Допомога', 'callback_data' => 'question'],
+            $questions = DB::table('bot_question')->where('country','=',$country->id)->get();
+            $question_list=[];
+            foreach ($questions as $question){
+                $question_list[]=
+                    [[ 'text' => $question->title, 'callback_data' => 'question_'.$question->id]];
 
-                ],
-                [
-                    ['text' => 'Міжнародний захист', 'callback_data' => 'question'],
-                ],
-                [
-                    ['text' => 'Інтеграція', 'callback_data' => 'question'],
-                ],
-                [
-                    ['text' => 'Працевлаштування', 'callback_data' => 'question'],
-                ],
-                [
-                    ['text' => 'Корисні контакти', 'callback_data' => 'question'],
-                ],
-                [
-                    ['text' => 'Назад', 'callback_data' => 'back'],
-                ],
-            ]
-        ]);
-        $response = Telegram::sendMessage([
-            'chat_id' => $chat_id,
-            'text' => 'Правила в\'їзду до країн',
-            'reply_markup' => $inline_keyboard
-        ]);
+            }
+            $question_list[]=
+                [['text' => 'Назад', 'callback_data' => 'back']];
+            $inline_keyboard = json_encode([
+                'inline_keyboard' => $question_list
+            ]);
+            $response = Telegram::sendMessage([
+                'chat_id' => $chat_id,
+                'text' => 'Правила в\'їзду до обраної країни',
+                'reply_markup' => $inline_keyboard
+            ]);
+        }
+
     }
-    public function question($chat_id)
+    public function question($chat_id, $question_id)
     {
+        $question = DB::table('bot_question')->where('id','=',$question_id)->get()->first();
+        $children_questions = DB::table('bot_question')->where('parent','=',$question_id)->get();
+        $question_list=[];
+        foreach ($children_questions as $child){
+            $question_list[]=
+                [[ 'text' => $child->title, 'callback_data' => 'question_'.$child->id]];
+
+        }
+        $question_list[]=
+            [['text' => 'Назад', 'callback_data' => 'back']];
         $inline_keyboard = json_encode([
-            'inline_keyboard' => [
-                [
-                        ['text' => 'Назад', 'callback_data' => 'back'],
-                ],
-            ]
+            'inline_keyboard' =>  $question_list
         ]);
+
         $response = Telegram::sendMessage([
             'chat_id' => $chat_id,
-            'text' => 'Відповідь на запитання \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla odio elit, molestie vel mauris at, blandit imperdiet magna. Cras ac augue purus. Vestibulum eleifend sem id enim pretium, sit amet laoreet lorem laoreet. Phasellus vitae dignissim purus, vulputate suscipit risus. Nam turpis nibh, tincidunt sed pulvinar vel, elementum nec mauris. Ut in commodo tellus, eu porta dolor. Sed ut metus augue. Nulla vestibulum leo nec arcu euismod sollicitudin. Ut porttitor in metus eget tempus. Nunc porttitor vel diam vel mattis. Cras consequat id erat eleifend luctus. Suspendisse potenti.',
+            'text' => $question->title.":\n".$question->answer,
             'reply_markup' => $inline_keyboard
         ]);
 
     }
     public function contacts($chat_id){
+        $this->changePath($chat_id,'Contacts');
         $inline_keyboard = json_encode([
             'inline_keyboard' => [
                 [
@@ -160,34 +200,31 @@ class TgBotController extends BaseController
     }
     public function popularQuestion($chat_id)
     {
+        $this->changePath($chat_id,'Popular questions');
+        $questions = DB::table('bot_question')->where('country','=',NULL)->where('parent','=',NULL)->get();
+        $question_list=[];
+        foreach ($questions as $question){
+            $question_list[]=
+                [[ 'text' => $question->title, 'callback_data' => 'question_'.$question->id]];
+
+        }
+        $question_list[]=
+            [['text' => 'Назад', 'callback_data' => 'back']];
         $inline_keyboard = json_encode([
-            'inline_keyboard' => [
-                [
-                    [
-                        ['text' => 'Як мені ...?', 'callback_data' => 'question'],
-                    ],
-                    [
-                        ['text' => 'Як мені ...?', 'callback_data' => 'question'],
-                    ],
-                    [
-                        ['text' => 'Як мені ...?', 'callback_data' => 'question'],
-                    ],
-                    [
-                        ['text' => 'Назад', 'callback_data' => 'back'],
-                    ],
-                ],
-            ]
+            'inline_keyboard' =>
+                $question_list
+
         ]);
         $response = Telegram::sendMessage([
             'chat_id' => $chat_id,
-            'text' => 'Популярні запитання:',
+            'text' => 'Цікаві питання',
             'reply_markup' => $inline_keyboard
         ]);
 
     }
-
     public function gender($chat_id)
     {
+        $this->changePath($chat_id,'Gender check');
         $inline_keyboard = json_encode([
             'inline_keyboard' => [
                 [
@@ -206,24 +243,10 @@ class TgBotController extends BaseController
 
         $messageId = $response->getMessageId();
     }
-
     public function webhookHandler()
     {
-        // If you're not using commands system, then you can enable this.
         $update = Telegram::getWebhookUpdates();
-        // This fetchs webhook update + processes the update through the commands system.
-        #$update = $this->telegram->commandsHandler(true);
-        // Commands handler method returns an Update object.
-        // So you can further process $update object
-        // to however you want.
-        // Below is an example
         $message = $update->getMessage()->getText();
-        // Triggers when your bot receives text messages like:
-        // - Can you inspire me?
-        // - Do you have an inspiring quote?
-        // - Tell me an inspirational quote
-        // - inspire me
-        // - Hey bot, tell me an inspiring quote please?
         if (str_contains($message, ['inspire', 'inspirational', 'inspiring'])) {
             $this->telegram->sendMessage()
                 ->chatId($update->getMessage()->getChat()->getId())
@@ -231,6 +254,24 @@ class TgBotController extends BaseController
                 ->getResult();
         }
         return 'Ok';
+    }
+    public function changePath($chat_id,$name){
+        $user = DB::table('bot_users')->select('full_path')->where('chat_id',$chat_id)->get()->first();
+
+                if(is_null($user->full_path)){
+                    $path = [];
+                }else{
+                    $path= json_decode($user->full_path);
+                }
+
+                      $path[]=$name;
+         DB::table('bot_users')
+            ->where('chat_id', $chat_id)
+            ->update([
+                'full_path' => json_encode($path),
+                'relative_path' => json_encode(array_unique($path)),
+                'current_step' => $name
+            ]);
     }
 }
 
