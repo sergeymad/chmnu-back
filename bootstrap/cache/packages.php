@@ -42,6 +42,17 @@
       0 => 'Laravel\\Dusk\\DuskServiceProvider',
     ),
   ),
+  'laravel/nova' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Nova\\NovaCoreServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Nova' => 'Laravel\\Nova\\Nova',
+    ),
+  ),
   'laravel/nova-dusk-suite' => 
   array (
     'dont-discover' => 
@@ -102,17 +113,6 @@
     'providers' => 
     array (
       0 => 'Spatie\\LaravelRay\\RayServiceProvider',
-    ),
-  ),
-  'westacks/telebot' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'WeStacks\\TeleBot\\Laravel\\TeleBotServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'TeleBot' => 'WeStacks\\TeleBot\\Laravel\\TeleBot',
     ),
   ),
 );

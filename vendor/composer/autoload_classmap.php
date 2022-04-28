@@ -688,7 +688,6 @@ return array(
     'SebastianBergmann\\Diff\\Output\\DiffOutputBuilderInterface' => $vendorDir . '/sebastian/diff/src/Output/DiffOutputBuilderInterface.php',
     'SebastianBergmann\\Diff\\Output\\StrictUnifiedDiffOutputBuilder' => $vendorDir . '/sebastian/diff/src/Output/StrictUnifiedDiffOutputBuilder.php',
     'SebastianBergmann\\Diff\\Output\\UnifiedDiffOutputBuilder' => $vendorDir . '/sebastian/diff/src/Output/UnifiedDiffOutputBuilder.php',
-    'SebastianBergmann\\Diff\\Parser' => $vendorDir . '/sebastian/diff/src/Parser.php',
     'SebastianBergmann\\Diff\\TimeEfficientLongestCommonSubsequenceCalculator' => $vendorDir . '/sebastian/diff/src/TimeEfficientLongestCommonSubsequenceCalculator.php',
     'SebastianBergmann\\Environment\\Console' => $vendorDir . '/sebastian/environment/src/Console.php',
     'SebastianBergmann\\Environment\\OperatingSystem' => $vendorDir . '/sebastian/environment/src/OperatingSystem.php',

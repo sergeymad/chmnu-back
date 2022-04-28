@@ -95,7 +95,7 @@ class TgBotController extends BaseController
     }
     public function send_answerCallbackQuery($method, $data, $client){
         $data["parse_mode"] = "html";
-        $ch = curl_init("https://api.telegram.org/---токен---/$method");
+        $ch = curl_init("https://api.telegram.org/5202270428:AAHN1iCNFiSQC8lSQsh5yhHYQL8vOheQtVU/$method");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
