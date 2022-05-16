@@ -159,6 +159,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/config" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/benjaminhirsch/nova-slug-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/silvanite/novatoolpermissions" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/silvanite/novafieldcheckboxes" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/silvanite/brandenburg" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -21,15 +21,17 @@
         "guzzlehttp/guzzle": "^7.4",
         "illuminate/support": "^8.67|^9.0",
         "irazasyed/telegram-bot-sdk": "^3.6",
+        "laravel/nova": "*",
         "laravel/sanctum": "^2.15",
         "laravel/ui": "^3.3",
         "nunomaduro/collision": "*",
+        "silvanite/novatoolpermissions": "^1.1",
         "spatie/once": "^1.1|^2.0|^3.0",
         "symfony/console": "^5.4|^6.0",
         "symfony/finder": "^5.4|^6.0",
         "symfony/intl": "^5.4|^6.0",
         "symfony/process": "^5.4|^6.0",
-        "laravel/nova": "*"
+        "serhiimad/supportchat": "*"
     },
     "require-dev": {
         "laravel/nova-dusk-suite": "8.3.x-dev|9.3.x-dev",
@@ -99,6 +101,10 @@
         "0": {
             "type": "vcs",
             "url": "https://github.com/laravel/nova-dusk-suite"
+        },
+        "1": {
+            "type": "path",
+            "url": "./nova-components/Supportchat"
         }
     },
     "minimum-stability": "dev",

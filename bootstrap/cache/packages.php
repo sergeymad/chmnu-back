@@ -1,4 +1,11 @@
 <?php return array (
+  'benjaminhirsch/nova-slug-field' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Benjaminhirsch\\NovaSlugField\\FieldServiceProvider',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 
@@ -106,6 +113,39 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'serhiimad/supportchat' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Serhiimad\\Supportchat\\ToolServiceProvider',
+    ),
+  ),
+  'silvanite/brandenburg' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Silvanite\\Brandenburg\\Providers\\BrandenburgServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'BrandenburgPolicy' => 'Silvanite\\Brandenburg\\Facades\\PolicyFacade',
+    ),
+  ),
+  'silvanite/novafieldcheckboxes' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Silvanite\\NovaFieldCheckboxes\\FieldServiceProvider',
+    ),
+  ),
+  'silvanite/novatoolpermissions' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Silvanite\\NovaToolPermissions\\Providers\\AuthServiceProvider',
+      1 => 'Silvanite\\NovaToolPermissions\\Providers\\PackageServiceProvider',
     ),
   ),
   'spatie/laravel-ray' => 

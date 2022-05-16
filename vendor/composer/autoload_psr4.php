@@ -51,6 +51,10 @@ return array(
     'Spatie\\Macroable\\' => array($vendorDir . '/spatie/macroable/src'),
     'Spatie\\LaravelRay\\' => array($vendorDir . '/spatie/laravel-ray/src'),
     'Spatie\\Backtrace\\' => array($vendorDir . '/spatie/backtrace/src'),
+    'Silvanite\\NovaToolPermissions\\' => array($vendorDir . '/silvanite/novatoolpermissions/src-php'),
+    'Silvanite\\NovaFieldCheckboxes\\' => array($vendorDir . '/silvanite/novafieldcheckboxes/src'),
+    'Silvanite\\Brandenburg\\' => array($vendorDir . '/silvanite/brandenburg/src'),
+    'Serhiimad\\Supportchat\\' => array($vendorDir . '/serhiimad/supportchat/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),
@@ -124,6 +128,7 @@ return array(
     'Cake\\Chronos\\' => array($vendorDir . '/cakephp/chronos/src'),
     'Brick\\Money\\' => array($vendorDir . '/brick/money/src'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
+    'Benjaminhirsch\\NovaSlugField\\' => array($vendorDir . '/benjaminhirsch/nova-slug-field/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),
     'App\\' => array($baseDir . '/app', $baseDir . '/App', $vendorDir . '/laravel/nova-dusk-suite/app'),
 );

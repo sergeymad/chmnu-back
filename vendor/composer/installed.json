@@ -60,6 +60,62 @@
             "install-path": "../asm89/stack-cors"
         },
         {
+            "name": "benjaminhirsch/nova-slug-field",
+            "version": "1.3.0",
+            "version_normalized": "1.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomhatzer/nova-slug-field.git",
+                "reference": "ed3dfb1947e2da3e8bcc1a4d168ddc9d9d7ee6a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomhatzer/nova-slug-field/zipball/ed3dfb1947e2da3e8bcc1a4d168ddc9d9d7ee6a9",
+                "reference": "ed3dfb1947e2da3e8bcc1a4d168ddc9d9d7ee6a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "time": "2022-04-04T16:53:49+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Benjaminhirsch\\NovaSlugField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Benjaminhirsch\\NovaSlugField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Hirsch",
+                    "email": "mail@benjaminhirsch.net",
+                    "homepage": "https://www.benjaminhirsch.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova field to generate a slugs.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/benjaminhirsch/nova-slug-field/issues",
+                "source": "https://github.com/tomhatzer/nova-slug-field/tree/1.3.0"
+            },
+            "install-path": "../benjaminhirsch/nova-slug-field"
+        },
+        {
             "name": "brick/math",
             "version": "0.9.3",
             "version_normalized": "0.9.3.0",
@@ -514,22 +570,22 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.13.8",
-            "version_normalized": "2.13.8.0",
+            "version": "2.13.9",
+            "version_normalized": "2.13.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "dc9b3c3c8592c935a6e590441f9abc0f9eba335b"
+                "reference": "c480849ca3ad6706a39c970cdfe6888fa8a058b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/dc9b3c3c8592c935a6e590441f9abc0f9eba335b",
-                "reference": "dc9b3c3c8592c935a6e590441f9abc0f9eba335b",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/c480849ca3ad6706a39c970cdfe6888fa8a058b8",
+                "reference": "c480849ca3ad6706a39c970cdfe6888fa8a058b8",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.0|^2.0",
-                "doctrine/deprecations": "^0.5.3",
+                "doctrine/deprecations": "^0.5.3|^1",
                 "doctrine/event-manager": "^1.0",
                 "ext-pdo": "*",
                 "php": "^7.1 || ^8"
@@ -548,7 +604,7 @@
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
             },
-            "time": "2022-03-09T15:25:46+00:00",
+            "time": "2022-05-02T20:28:55+00:00",
             "bin": [
                 "bin/doctrine-dbal"
             ],
@@ -606,7 +662,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/2.13.8"
+                "source": "https://github.com/doctrine/dbal/tree/2.13.9"
             },
             "funding": [
                 {
@@ -626,31 +682,31 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "v0.5.3",
-            "version_normalized": "0.5.3.0",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "9504165960a1f83cc1480e2be1dd0a0478561314"
+                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/9504165960a1f83cc1480e2be1dd0a0478561314",
-                "reference": "9504165960a1f83cc1480e2be1dd0a0478561314",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
+                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1|^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^6.0|^7.0|^8.0",
-                "phpunit/phpunit": "^7.0|^8.0|^9.0",
-                "psr/log": "^1.0"
+                "doctrine/coding-standard": "^9",
+                "phpunit/phpunit": "^7.5|^8.5|^9.5",
+                "psr/log": "^1|^2|^3"
             },
             "suggest": {
                 "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
             },
-            "time": "2021-03-21T12:59:47+00:00",
+            "time": "2022-05-02T15:47:09+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -666,7 +722,7 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/v0.5.3"
+                "source": "https://github.com/doctrine/deprecations/tree/v1.0.0"
             },
             "install-path": "../doctrine/deprecations"
         },
@@ -2216,17 +2272,17 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v6.23.0",
-            "version_normalized": "6.23.0.0",
+            "version": "v6.24.0",
+            "version_normalized": "6.24.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "98901d49176977c96330fd8c2ca5460eee50a246"
+                "reference": "7fed3695741787d9998c5f04c94adfd62d70e766"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/98901d49176977c96330fd8c2ca5460eee50a246",
-                "reference": "98901d49176977c96330fd8c2ca5460eee50a246",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/7fed3695741787d9998c5f04c94adfd62d70e766",
+                "reference": "7fed3695741787d9998c5f04c94adfd62d70e766",
                 "shasum": ""
             },
             "require": {
@@ -2250,7 +2306,7 @@
             "suggest": {
                 "ext-pcntl": "Used to gracefully terminate Dusk when tests are running."
             },
-            "time": "2022-04-11T18:55:12+00:00",
+            "time": "2022-05-09T13:43:52+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2286,23 +2342,23 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/dusk/issues",
-                "source": "https://github.com/laravel/dusk/tree/v6.23.0"
+                "source": "https://github.com/laravel/dusk/tree/v6.24.0"
             },
             "install-path": "../laravel/dusk"
         },
         {
             "name": "laravel/framework",
-            "version": "v8.83.10",
-            "version_normalized": "8.83.10.0",
+            "version": "v8.83.12",
+            "version_normalized": "8.83.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "148ae59b7da6c3db6736374d357c5aaef9506fb7"
+                "reference": "2af2314989845db68dfbb65a54b8748ffaf26204"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/148ae59b7da6c3db6736374d357c5aaef9506fb7",
-                "reference": "148ae59b7da6c3db6736374d357c5aaef9506fb7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2af2314989845db68dfbb65a54b8748ffaf26204",
+                "reference": "2af2314989845db68dfbb65a54b8748ffaf26204",
                 "shasum": ""
             },
             "require": {
@@ -2421,7 +2477,7 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
-            "time": "2022-04-27T14:07:37+00:00",
+            "time": "2022-05-10T13:57:07+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2664,17 +2720,17 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.14.0",
-            "version_normalized": "1.14.0.0",
+            "version": "v1.14.4",
+            "version_normalized": "1.14.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "453c66fde4109eb49e12299ffe3bf0d667983447"
+                "reference": "0e0e51f19c758c79acbda11e3870641fbad5b7d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/453c66fde4109eb49e12299ffe3bf0d667983447",
-                "reference": "453c66fde4109eb49e12299ffe3bf0d667983447",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/0e0e51f19c758c79acbda11e3870641fbad5b7d9",
+                "reference": "0e0e51f19c758c79acbda11e3870641fbad5b7d9",
                 "shasum": ""
             },
             "require": {
@@ -2683,7 +2739,7 @@
                 "illuminate/support": "^8.0|^9.0",
                 "php": "^7.3|^8.0"
             },
-            "time": "2022-04-27T13:10:22+00:00",
+            "time": "2022-05-12T12:53:10+00:00",
             "bin": [
                 "bin/sail"
             ],
@@ -2795,17 +2851,17 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v9.4.7",
-            "version_normalized": "9.4.7.0",
+            "version": "v9.4.9",
+            "version_normalized": "9.4.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "46114761e835ae77e6b6b26abceb5ae63859ba98"
+                "reference": "61ce79ce87fbebb28dcc0dd8f95776aa0dec00c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/46114761e835ae77e6b6b26abceb5ae63859ba98",
-                "reference": "46114761e835ae77e6b6b26abceb5ae63859ba98",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/61ce79ce87fbebb28dcc0dd8f95776aa0dec00c8",
+                "reference": "61ce79ce87fbebb28dcc0dd8f95776aa0dec00c8",
                 "shasum": ""
             },
             "require": {
@@ -2828,7 +2884,7 @@
                 "algolia/algoliasearch-client-php": "Required to use the Algolia engine (^3.2).",
                 "meilisearch/meilisearch-php": "Required to use the MeiliSearch engine (^0.23)."
             },
-            "time": "2022-04-06T09:38:17+00:00",
+            "time": "2022-05-05T14:24:18+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3067,17 +3123,17 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.3.0",
-            "version_normalized": "2.3.0.0",
+            "version": "2.3.1",
+            "version_normalized": "2.3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955"
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/32a49eb2b38fe5e5c417ab748a45d0beaab97955",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
                 "shasum": ""
             },
             "require": {
@@ -3110,7 +3166,7 @@
             "suggest": {
                 "symfony/yaml": "v2.3+ required if using the Front Matter extension"
             },
-            "time": "2022-04-07T22:37:05+00:00",
+            "time": "2022-05-14T15:37:39+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3549,17 +3605,17 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.5.0",
-            "version_normalized": "2.5.0.0",
+            "version": "2.6.0",
+            "version_normalized": "2.6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "4192345e260f1d51b365536199744b987e160edc"
+                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4192345e260f1d51b365536199744b987e160edc",
-                "reference": "4192345e260f1d51b365536199744b987e160edc",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/247918972acd74356b0a91dfaa5adcaec069b6c0",
+                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0",
                 "shasum": ""
             },
             "require": {
@@ -3572,18 +3628,23 @@
             "require-dev": {
                 "aws/aws-sdk-php": "^2.4.9 || ^3.0",
                 "doctrine/couchdb": "~1.0@dev",
-                "elasticsearch/elasticsearch": "^7",
+                "elasticsearch/elasticsearch": "^7 || ^8",
+                "ext-json": "*",
                 "graylog2/gelf-php": "^1.4.2",
+                "guzzlehttp/guzzle": "^7.4",
+                "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "php-console/php-console": "^3.1.3",
-                "phpspec/prophecy": "^1.6.1",
+                "phpspec/prophecy": "^1.15",
                 "phpstan/phpstan": "^0.12.91",
-                "phpunit/phpunit": "^8.5",
+                "phpunit/phpunit": "^8.5.14",
                 "predis/predis": "^1.1",
                 "rollbar/rollbar": "^1.3 || ^2 || ^3",
-                "ruflin/elastica": ">=0.90@dev",
-                "swiftmailer/swiftmailer": "^5.3|^6.0"
+                "ruflin/elastica": "^7",
+                "swiftmailer/swiftmailer": "^5.3|^6.0",
+                "symfony/mailer": "^5.4 || ^6",
+                "symfony/mime": "^5.4 || ^6"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -3602,7 +3663,7 @@
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
                 "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
-            "time": "2022-04-08T15:43:54+00:00",
+            "time": "2022-05-10T09:36:00+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3635,7 +3696,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.5.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.6.0"
             },
             "funding": [
                 {
@@ -3771,17 +3832,17 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.57.0",
-            "version_normalized": "2.57.0.0",
+            "version": "2.58.0",
+            "version_normalized": "2.58.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78"
+                "reference": "97a34af22bde8d0ac20ab34b29d7bfe360902055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a54375c21eea4811dbd1149fe6b246517554e78",
-                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/97a34af22bde8d0ac20ab34b29d7bfe360902055",
+                "reference": "97a34af22bde8d0ac20ab34b29d7bfe360902055",
                 "shasum": ""
             },
             "require": {
@@ -3799,10 +3860,11 @@
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12.54 || ^1.0",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.14",
+                "phpunit/php-file-iterator": "^2.0.5",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.23",
                 "squizlabs/php_codesniffer": "^3.4"
             },
-            "time": "2022-02-13T18:13:33+00:00",
+            "time": "2022-04-25T19:31:17+00:00",
             "bin": [
                 "bin/carbon"
             ],
@@ -4788,17 +4850,17 @@
         },
         {
             "name": "php-webdriver/webdriver",
-            "version": "1.12.0",
-            "version_normalized": "1.12.0.0",
+            "version": "1.12.1",
+            "version_normalized": "1.12.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-webdriver/php-webdriver.git",
-                "reference": "99d4856ed7dffcdf6a52eccd6551e83d8d557ceb"
+                "reference": "b27ddf458d273c7d4602106fcaf978aa0b7fe15a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-webdriver/php-webdriver/zipball/99d4856ed7dffcdf6a52eccd6551e83d8d557ceb",
-                "reference": "99d4856ed7dffcdf6a52eccd6551e83d8d557ceb",
+                "url": "https://api.github.com/repos/php-webdriver/php-webdriver/zipball/b27ddf458d273c7d4602106fcaf978aa0b7fe15a",
+                "reference": "b27ddf458d273c7d4602106fcaf978aa0b7fe15a",
                 "shasum": ""
             },
             "require": {
@@ -4824,7 +4886,7 @@
             "suggest": {
                 "ext-SimpleXML": "For Firefox profile creation"
             },
-            "time": "2021-10-14T09:30:02+00:00",
+            "time": "2022-05-03T12:16:34+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -4850,7 +4912,7 @@
             ],
             "support": {
                 "issues": "https://github.com/php-webdriver/php-webdriver/issues",
-                "source": "https://github.com/php-webdriver/php-webdriver/tree/1.12.0"
+                "source": "https://github.com/php-webdriver/php-webdriver/tree/1.12.1"
             },
             "install-path": "../php-webdriver/webdriver"
         },
@@ -6290,17 +6352,17 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.2",
-            "version_normalized": "0.11.2.0",
+            "version": "v0.11.4",
+            "version_normalized": "0.11.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7f7da640d68b9c9fec819caae7c744a213df6514"
+                "reference": "05c544b339b112226ad14803e1e5b09a61957454"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7f7da640d68b9c9fec819caae7c744a213df6514",
-                "reference": "7f7da640d68b9c9fec819caae7c744a213df6514",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/05c544b339b112226ad14803e1e5b09a61957454",
+                "reference": "05c544b339b112226ad14803e1e5b09a61957454",
                 "shasum": ""
             },
             "require": {
@@ -6315,17 +6377,15 @@
                 "symfony/console": "4.4.37 || 5.3.14 || 5.3.15 || 5.4.3 || 5.4.4 || 6.0.3 || 6.0.4"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.2",
-                "hoa/console": "3.17.05.02"
+                "bamarni/composer-bin-plugin": "^1.2"
             },
             "suggest": {
                 "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
                 "ext-pdo-sqlite": "The doc command requires SQLite to work.",
                 "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
-                "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
-                "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
+                "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history."
             },
-            "time": "2022-02-28T15:28:54+00:00",
+            "time": "2022-05-06T12:49:14+00:00",
             "bin": [
                 "bin/psysh"
             ],
@@ -6365,7 +6425,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.2"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.4"
             },
             "install-path": "../psy/psysh"
         },
@@ -7610,6 +7670,230 @@
                 }
             ],
             "install-path": "../sebastian/version"
+        },
+        {
+            "name": "serhiimad/supportchat",
+            "version": "dev-develop",
+            "version_normalized": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Supportchat",
+                "reference": "b61f9759614ea568d57972f300edadc287ae85dd"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Serhiimad\\Supportchat\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Serhiimad\\Supportchat\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            },
+            "install-path": "../serhiimad/supportchat"
+        },
+        {
+            "name": "silvanite/brandenburg",
+            "version": "1.5.2",
+            "version_normalized": "1.5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Silvanite/brandenburg.git",
+                "reference": "41625a3052acccc3ad9b6d2505e16cdcb6de3aa6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Silvanite/brandenburg/zipball/41625a3052acccc3ad9b6d2505e16cdcb6de3aa6",
+                "reference": "41625a3052acccc3ad9b6d2505e16cdcb6de3aa6",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^8.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.1",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "time": "2020-10-04T09:50:18+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Silvanite\\Brandenburg\\Providers\\BrandenburgServiceProvider"
+                    ],
+                    "aliases": {
+                        "BrandenburgPolicy": "Silvanite\\Brandenburg\\Facades\\PolicyFacade"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Silvanite\\Brandenburg\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Mark (m2de)",
+                    "email": "marco@silvanite.com"
+                }
+            ],
+            "description": "Laravel Authentication Package",
+            "support": {
+                "issues": "https://github.com/Silvanite/brandenburg/issues",
+                "source": "https://github.com/Silvanite/brandenburg/tree/1.5.2"
+            },
+            "install-path": "../silvanite/brandenburg"
+        },
+        {
+            "name": "silvanite/novafieldcheckboxes",
+            "version": "v1.2.2",
+            "version_normalized": "1.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Silvanite/novafieldcheckboxes.git",
+                "reference": "697e50f472b1a205132bc656657e482da1ca0774"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Silvanite/novafieldcheckboxes/zipball/697e50f472b1a205132bc656657e482da1ca0774",
+                "reference": "697e50f472b1a205132bc656657e482da1ca0774",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "time": "2020-05-17T18:38:55+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Silvanite\\NovaFieldCheckboxes\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Silvanite\\NovaFieldCheckboxes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field to display a number of multi-select options using checkboxes.",
+            "keywords": [
+                "checkbox",
+                "checkboxes",
+                "field",
+                "input",
+                "laravel",
+                "multiple choice",
+                "multiselect",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Silvanite/novafieldcheckboxes/issues",
+                "source": "https://github.com/Silvanite/novafieldcheckboxes/tree/master"
+            },
+            "install-path": "../silvanite/novafieldcheckboxes"
+        },
+        {
+            "name": "silvanite/novatoolpermissions",
+            "version": "v1.1.3",
+            "version_normalized": "1.1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Silvanite/novatoolpermissions.git",
+                "reference": "2ceea130ea39ee78f8235598162d12645e0b022f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Silvanite/novatoolpermissions/zipball/2ceea130ea39ee78f8235598162d12645e0b022f",
+                "reference": "2ceea130ea39ee78f8235598162d12645e0b022f",
+                "shasum": ""
+            },
+            "require": {
+                "benjaminhirsch/nova-slug-field": "^1.2.3",
+                "laravel/framework": ">=5.6.0",
+                "php": ">=7.1.3",
+                "silvanite/brandenburg": "^1.0",
+                "silvanite/novafieldcheckboxes": "^1.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": ">=3.1"
+            },
+            "time": "2020-07-01T08:16:00+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Silvanite\\NovaToolPermissions\\Providers\\AuthServiceProvider",
+                        "Silvanite\\NovaToolPermissions\\Providers\\PackageServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Silvanite\\NovaToolPermissions\\": "src-php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Mark",
+                    "email": "m2de@outlook.com"
+                }
+            ],
+            "description": "Laravel Nova Permissions (Roles and Permission based Access Control (ACL))",
+            "keywords": [
+                "Authentication",
+                "access control",
+                "acl",
+                "authorization",
+                "gates",
+                "laravel",
+                "nova",
+                "permissions",
+                "policies",
+                "roles",
+                "tool"
+            ],
+            "support": {
+                "issues": "https://github.com/Silvanite/novatoolpermissions/issues",
+                "source": "https://github.com/Silvanite/novatoolpermissions/tree/master"
+            },
+            "install-path": "../silvanite/novatoolpermissions"
         },
         {
             "name": "spatie/backtrace",

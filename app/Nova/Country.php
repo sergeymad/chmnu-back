@@ -3,7 +3,9 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Text;
 class Country extends Resource
@@ -42,6 +44,12 @@ class Country extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name'),
+             Textarea::make('Правила в’їзду до країни','question_0')->hideFromIndex(),
+             Textarea::make('Міжнародний захист','question_1')->hideFromIndex(),
+             Textarea::make('Працевлаштування','question_2')->hideFromIndex(),
+             Textarea::make('Допомога','question_3')->hideFromIndex(),
+             Textarea::make('Інтеграція','question_4')->hideFromIndex(),
+             Textarea::make('Корисні контакти','question_5')->hideFromIndex(),
             Text::make(__('Code'), 'code'),
         ];
     }

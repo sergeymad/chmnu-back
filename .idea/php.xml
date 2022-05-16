@@ -155,6 +155,10 @@
       <path value="$PROJECT_DIR$/vendor/league/config" />
       <path value="$PROJECT_DIR$/vendor/nette/utils" />
       <path value="$PROJECT_DIR$/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/vendor/benjaminhirsch/nova-slug-field" />
+      <path value="$PROJECT_DIR$/vendor/silvanite/novatoolpermissions" />
+      <path value="$PROJECT_DIR$/vendor/silvanite/novafieldcheckboxes" />
+      <path value="$PROJECT_DIR$/vendor/silvanite/brandenburg" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

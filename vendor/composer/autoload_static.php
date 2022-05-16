@@ -14,8 +14,8 @@ class ComposerStaticInite8a116a6963775be2b3959d9bb2945d3
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
@@ -25,11 +25,11 @@ class ComposerStaticInite8a116a6963775be2b3959d9bb2945d3
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
@@ -113,6 +113,10 @@ class ComposerStaticInite8a116a6963775be2b3959d9bb2945d3
             'Spatie\\Macroable\\' => 17,
             'Spatie\\LaravelRay\\' => 18,
             'Spatie\\Backtrace\\' => 17,
+            'Silvanite\\NovaToolPermissions\\' => 30,
+            'Silvanite\\NovaFieldCheckboxes\\' => 30,
+            'Silvanite\\Brandenburg\\' => 22,
+            'Serhiimad\\Supportchat\\' => 22,
         ),
         'R' => 
         array (
@@ -228,6 +232,7 @@ class ComposerStaticInite8a116a6963775be2b3959d9bb2945d3
         array (
             'Brick\\Money\\' => 12,
             'Brick\\Math\\' => 11,
+            'Benjaminhirsch\\NovaSlugField\\' => 29,
         ),
         'A' => 
         array (
@@ -418,6 +423,22 @@ class ComposerStaticInite8a116a6963775be2b3959d9bb2945d3
         'Spatie\\Backtrace\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/backtrace/src',
+        ),
+        'Silvanite\\NovaToolPermissions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/silvanite/novatoolpermissions/src-php',
+        ),
+        'Silvanite\\NovaFieldCheckboxes\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/silvanite/novafieldcheckboxes/src',
+        ),
+        'Silvanite\\Brandenburg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/silvanite/brandenburg/src',
+        ),
+        'Serhiimad\\Supportchat\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/serhiimad/supportchat/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -713,6 +734,10 @@ class ComposerStaticInite8a116a6963775be2b3959d9bb2945d3
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
+        'Benjaminhirsch\\NovaSlugField\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/benjaminhirsch/nova-slug-field/src',
         ),
         'Asm89\\Stack\\' => 
         array (

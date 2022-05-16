@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Http;
 $updates = Telegram::getWebhookUpdates();
 
 
-Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
+Route::get('/', function () {
+    return redirect('/nova');
+});
 
 Route::post('/tg', [App\Http\Controllers\TgBotController::class, 'handler']);
+Route::get('/chatList', [App\Http\Controllers\TgBotController::class, 'getChats']);
+Route::get('/getMessages/{id}', [App\Http\Controllers\TgBotController::class, 'getMessages']);
+Route::get('/sendMessage/{id}', [App\Http\Controllers\TgBotController::class, 'sendMessage']);
